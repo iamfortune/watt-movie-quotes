@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schemas.platformatic.dev/@platformatic/db/2.5.0.json",
+  "db": {
+    "connectionString": "sqlite://./db.sqlite",
+    "graphql": true,
+    "openapi": true,
+    "schemalock": true
+  },
+  "watch": {
+    "ignore": [
+      "*.sqlite",
+      "*.sqlite-journal"
+    ]
+  },
+  "migrations": {
+    "dir": "migrations",
+    "autoApply": "true"
+  },
+  "plugins": {
+    "paths": [
+      {
+        "path": "./plugins",
+        "encapsulate": false
+      },
+      {
+        "path": "./routes"
+      }
+    ],
+    "typescript": "true"
+  },
+  "types": {
+    "autogenerate": true
+  }
+}
