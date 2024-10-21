@@ -10,7 +10,7 @@ const handleResponse = async (response) => {
 
 export const fetchQuotes = async () => {
   try {
-    const response = await fetch(`${API_BASE_URL}/quotes`);
+    const response = await fetch(`/quotes/`);
     return handleResponse(response);
   } catch (error) {
     console.error('Error fetching quotes:', error);
@@ -20,8 +20,8 @@ export const fetchQuotes = async () => {
 
 export const likeQuote = async (id) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/quotes/${id}`, {
-      method: 'PUT',
+    const response = await fetch(`/quotes/${id}/like`, {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -36,7 +36,7 @@ export const likeQuote = async (id) => {
 
 export const createQuote = async (quoteData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/quotes`, {
+    const response = await fetch(`/quotes/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ export const createQuote = async (quoteData) => {
 
 export const deleteQuote = async (id) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/quotes/${id}`, {
+    const response = await fetch(`/quotes/${id}`, {
       method: 'DELETE',
     });
     return handleResponse(response);

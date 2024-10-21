@@ -8,9 +8,9 @@ module.exports = async function plugin(app) {
   async function incrementQuoteLikes(id) {
     const { db, sql } = app.platformatic;
     const result = await db.query(sql`
-      UPDATE quotes SET likes = likes + 1 WHERE id=${id} RETURNING likes
+      UPDATE quotes SET likes = likes + 1 WHERE id=${id} RETURNING *
     `);
-    return result[0]?.likes;
+    return result;
   }
 
   const schema = {

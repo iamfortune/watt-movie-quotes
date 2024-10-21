@@ -28,10 +28,8 @@ const QuoteList = () => {
 
   const handleLike = async (id) => {
     try {
-      const updatedQuote = await likeQuote(id);
-      setQuotes((prevQuotes) =>
-        prevQuotes.map((quote) => (quote.id === id ? updatedQuote : quote))
-      );
+      await likeQuote(id);
+      getQuotes();
     } catch (error) {
       console.error('Error liking quote:', error);
     }
@@ -96,7 +94,7 @@ const QuoteList = () => {
           <div className="space-y-4">
             {quotes.map((quote) => (
               <div
-                key={quote.id}
+                key={`${quote.id}`}
                 className="bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200"
               >
                 <p className="text-xl font-semibold text-gray-800 mb-1">"{quote.quote}"</p>
