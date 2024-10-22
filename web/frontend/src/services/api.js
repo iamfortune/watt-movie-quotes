@@ -1,5 +1,3 @@
-const API_BASE_URL = 'http://localhost:3042'; 
-
 const handleResponse = async (response) => {
   if (!response.ok) {
     const error = await response.text();

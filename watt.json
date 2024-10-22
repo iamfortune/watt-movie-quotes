@@ -1,8 +1,8 @@
 {
   "$schema": "https://schemas.platformatic.dev/wattpm/2.5.5.json",
   "server": {
-    "hostname": "127.0.0.1",
-    "port": 3042
+    "hostname": "0.0.0.0",
+    "port": "{PORT}"
   },
   "logger": {
     "level": "info"
