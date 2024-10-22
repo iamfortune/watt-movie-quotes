@@ -9,7 +9,8 @@
         }
       },
       {
-        "id": "frontend"
+        "id": "frontend",
+        "prefix": "/"
       }
     ],
     "refreshTimeout": 1000
